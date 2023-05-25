@@ -1,0 +1,12 @@
+.icon{
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0 0 20px;
+    cursor: pointer;
+}
+
+.icon span{
+    font-size: 1.4rem;
+}

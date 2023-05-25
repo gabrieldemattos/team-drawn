@@ -1,0 +1,36 @@
+.container h1{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.options button{
+    padding-inline: 2rem;
+}
+
+.option{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option details{
+    margin-block: 10px 110px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 25px;
+}
+
+.option details p:first-child{
+    cursor: default;
+    margin-top: 7px;
+}

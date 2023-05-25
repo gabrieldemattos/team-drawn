@@ -1,0 +1,23 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form label{
+    margin-bottom: .5rem;
+}
+
+.form input{
+    margin-bottom: 2rem;
+    border: 1px solid #fff;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+}
+
+.form input:disabled{
+    background: #cfcfcf;
+    border: none;
+}
