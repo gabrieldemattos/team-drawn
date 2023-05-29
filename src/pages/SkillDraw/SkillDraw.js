@@ -4,6 +4,9 @@ import styles from "./SkillDraw.module.css";
 //hooks
 import { useState } from "react";
 
+//utils
+import { shuffleArray } from "../../utils/utils";
+
 //components
 import Input from "../../components/Input";
 import Button from "../../components/Button";
@@ -61,15 +64,6 @@ const SkillDraw = () => {
       };
       return updatedRatings;
     });
-  };
-
-  //randomly shuffles the elements of an array
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
   };
 
   //distribute players in teams evenly, taking into account the rank of players

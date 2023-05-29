@@ -4,6 +4,9 @@ import styles from "./SimpleDraw.module.css";
 //hooks
 import { useState } from "react";
 
+//utils
+import { shuffleArray } from "../../utils/utils";
+
 //components
 import Input from "../../components/Input";
 import Button from "../../components/Button";
@@ -44,21 +47,19 @@ const SimpleDraw = () => {
 
     const playersDrawnForExtraTeam = [];
 
-    if (numberOfPlayersMore !== 0) {
-      const copyAmountPlayersList = [...amountPlayersList];
+    const shuffledPlayers = shuffleArray([...amountPlayersList]);
 
+    if (numberOfPlayersMore !== 0) {
       for (let i = 0; i < numberOfPlayersMore; i++) {
-        let randomIndex = Math.floor(
-          Math.random() * copyAmountPlayersList.length
-        );
-        let randomPlayer = copyAmountPlayersList[randomIndex];
+        let randomIndex = Math.floor(Math.random() * shuffledPlayers.length);
+        let randomPlayer = shuffledPlayers[randomIndex];
 
         playersDrawnForExtraTeam.push(randomPlayer);
-        copyAmountPlayersList.splice(randomIndex, 1);
+        shuffledPlayers.splice(randomIndex, 1);
       }
     }
 
-    const newSortedPlayers = amountPlayersList.filter(
+    const newSortedPlayers = shuffledPlayers.filter(
       (player) => !playersDrawnForExtraTeam.includes(player)
     );
 
