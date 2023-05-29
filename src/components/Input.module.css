@@ -18,6 +18,7 @@
 }
 
 .form input:disabled{
-    background: #cfcfcf;
+    background: #aaa9a9;
     border: none;
+    cursor: not-allowed;
 }

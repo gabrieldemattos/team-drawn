@@ -11,6 +11,7 @@ import { shuffleArray } from "../../utils/utils";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import BackToHome from "../../components/BackToHome";
+import TextArea from "../../components/TextArea";
 
 const SkillDraw = () => {
   const [playersPerTeam, setPlayersPerTeam] = useState("");
@@ -180,16 +181,14 @@ const SkillDraw = () => {
               value={playersPerTeam}
               state={setPlayersPerTeam}
             />
-            <textarea
-              onChange={(e) => setAmountPlayers(e.target.value)}
-            ></textarea>
+            <p>*Cada linha representa um jogador.</p>
+            <TextArea state={setAmountPlayers} />
             <Button text="Enviar nomes" />
           </form>
         )}
         {releaseInsertRating && (
           <div className={styles.rating}>
             <h2>Informe as notas de cada jogador:</h2>
-            <h3>As notas vão de 1 a 5:</h3>
             <ul>
               <li>1: Muito fraco</li>
               <li>2: Fraco</li>
@@ -197,7 +196,7 @@ const SkillDraw = () => {
               <li>4: Bom</li>
               <li>5: Muito bom</li>
             </ul>
-            <h2>Jogadores informados:</h2>
+            <h2>Jogadores informados ({amountPlayers.length}):</h2>
             <form onSubmit={handleSubmitRateAndRaffle}>
               {amountPlayers.map((player, index) => (
                 <div className={styles.player} key={index}>
@@ -225,21 +224,14 @@ const SkillDraw = () => {
         )}
         <div className={styles.tip}>
           {teams.length > 0 && (
-            <>
-              <p>
-                * Caso as médias dos times não estejam próximas, você pode
-                realizar um novo sorteio para obter uma distribuição mais
-                equilibrada.
-              </p>
-              <div className={styles.display_average}>
-                <input
-                  type="checkbox"
-                  onChange={toggleDisplayAverage}
-                  checked={displayAverage}
-                />
-                <span>Exibir média</span>
-              </div>
-            </>
+            <div className={styles.display_average}>
+              <input
+                type="checkbox"
+                onChange={toggleDisplayAverage}
+                checked={displayAverage}
+              />
+              <span>Exibir média</span>
+            </div>
           )}
         </div>
         <div className={styles.teams}>

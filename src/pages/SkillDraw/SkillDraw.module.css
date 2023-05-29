@@ -17,16 +17,8 @@
     width: 100px;
 }
 
-.container form textarea{
-    padding: 7px;
-    font-size: 1.1rem;
-    height: 400px;
-    width: 370px;
-    overflow-y: auto;
-    color: #000;
-    font-weight: bold;
-    resize: none;
-    margin-bottom: 20px;
+.container form p{
+    margin-bottom: 5px;
 }
 
 .rating h2{
@@ -107,7 +99,6 @@
     align-items: center;
     font-size: 1rem;
     gap: 10px;
-    margin-top: 15px;
 }
 
 .display_average input{

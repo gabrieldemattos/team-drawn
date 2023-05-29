@@ -11,6 +11,7 @@ import { shuffleArray } from "../../utils/utils";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import BackToHome from "../../components/BackToHome";
+import TextArea from "../../components/TextArea";
 
 const SimpleDraw = () => {
   const [playersPerTeam, setPlayersPerTeam] = useState("");
@@ -99,9 +100,8 @@ const SimpleDraw = () => {
               value={playersPerTeam}
               state={setPlayersPerTeam}
             />
-            <textarea
-              onChange={(e) => setPlayersList(e.target.value)}
-            ></textarea>
+            <p>*Cada linha representa um jogador.</p>
+            <TextArea state={setPlayersList} />
             <Button text="Enviar nomes" />
           </form>
         )}
