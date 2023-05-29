@@ -180,6 +180,7 @@ const SkillDraw = () => {
               type="number"
               value={playersPerTeam}
               state={setPlayersPerTeam}
+              min={1}
             />
             <p>*Cada linha representa um jogador.</p>
             <TextArea state={setAmountPlayers} />
